@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 public class CourseController {
 
     @Autowired
     private CourseService courseService;
 
     @PostMapping("/cours")
+    @CrossOrigin("*")
     public void saveCourse(@RequestBody Course course){
         courseService.saveCourse(course);
     }
